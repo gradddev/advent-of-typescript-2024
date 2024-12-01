@@ -1,0 +1,10 @@
+{
+	"private": true,
+	"name": "advent-of-typescript-2024",
+	"version": "1.0.0",
+	"author": "Alex Grad <git@grad.dev>",
+	"devDependencies": {
+		"type-testing": "^0.2.0",
+		"typescript": "^5.7.2"
+	}
+}
