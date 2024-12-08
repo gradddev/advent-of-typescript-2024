@@ -1,7 +1,9 @@
 /**
  * SOLUTION
  */
-const survivalRatio = (input: number | `${number} Q${number}`) => {
+type Quarter = `Q${1 | 2 | 3 | 4}`;
+
+const survivalRatio = (input: number | `${number} ${Quarter}`) => {
   const quarter = typeof input === "string" ? input : `${input} Q1`;
   const data = quarterlyData[quarter];
   if (!data) {
