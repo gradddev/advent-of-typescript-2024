@@ -1,23 +1,7 @@
 /**
  * SOLUTION
  */
-// declare namespace NodeJS {
-//   interface ProcessEnv {
-//     MOOD_LIGHTS: "true";
-//     BATH_TEMPERATURE: "327.59";
-//     STRAWBERRIES: "chocolate";
-//   }
-// }
-
-declare global {
-  namespace NodeJS {
-    interface ProcessEnv {
-      MOOD_LIGHTS: "true";
-      BATH_TEMPERATURE: "327.59";
-      STRAWBERRIES: "chocolate";
-    }
-  }
-}
+/// <reference path="day-8.d.ts" />
 
 /**
  * TESTS
