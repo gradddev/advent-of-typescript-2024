@@ -2,10 +2,11 @@
   "$schema": "https://json.schemastore.org/tsconfig",
   "compilerOptions": {
     "target": "ESNext",
-    "module": "ESNext",
+    "module": "Preserve",
     "moduleResolution": "Bundler",
     "strict": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["node"]
   },
   "include": ["./src/**/*.ts"]
 }

@@ -4,6 +4,7 @@
 	"version": "1.0.0",
 	"author": "Alex Grad <git@grad.dev>",
 	"devDependencies": {
+		"@types/node": "^22.10.1",
 		"type-testing": "^0.2.0",
 		"typescript": "^5.7.2"
 	}
