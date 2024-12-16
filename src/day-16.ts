@@ -5,8 +5,8 @@ declare function DynamicParamsCurrying<
   $Input extends unknown[],
   $Output extends unknown
 >(fn: (...args: $Input) => $Output):
+  $Input["length"] extends 0 ? $Output :
   <T extends unknown[]>(...args: T) =>
-    $Input["length"] extends 0 ? $Output :
     $Input extends [...T, ...infer $Tail]
       ? ReturnType<typeof DynamicParamsCurrying<$Tail, $Output>>
       : never;
