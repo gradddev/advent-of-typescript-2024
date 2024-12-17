@@ -3,12 +3,15 @@
  */
 type FirstChar<T> = T extends `${infer H}${string}` ? H : never;
 
-const compose =
-  <A, B, C, D>(
-    f: (x: A) => B,
-    g: (x: B) => C,
-    h: (x: C) => D
-  ) => (a: A) :  D => h(g(f(a)));
+function compose<T1, T2, T3, T4>(
+  f1: (a1: T1) => T2,
+  f2: (a2: T2) => T3,
+  f3: (a3: T3) => T4
+) {
+  return function f4(a1: T1): T4 {
+    return f3(f2(f1(a1)));
+  };
+}
 
 const upperCase = <T extends string>(x: T) => x.toUpperCase() as Uppercase<T>;
 const lowerCase = <T extends string>(x: T) => x.toLowerCase() as Lowercase<T>;
