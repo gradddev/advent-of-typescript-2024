@@ -1,14 +1,13 @@
 /**
  * SOLUTION
  */
-type Parse<Code, $AST extends unknown[] = [],> =
-  Code extends `${" " | "\n" | "\t"}${infer $Tail}` ?
-    Parse<$Tail, $AST> :
+type Parse<Code> =
+  Code extends `${" " | "\n" | "\t"}${infer $Tail}` ? Parse<$Tail> :
   Code extends `${string} ${infer $Id} = "${string}";${infer $Tail}` ?
-    Parse<$Tail, [...$AST, { id: $Id, type: "VariableDeclaration" }]> :
+    [{ id: $Id, type: "VariableDeclaration" }, ...Parse<$Tail>] :
   Code extends `${string}(${infer $Argument});${infer $Tail}` ?
-    Parse<$Tail, [...$AST, { argument: $Argument; type: "CallExpression" }]> :
-  $AST;
+    [{ argument: $Argument; type: "CallExpression" }, ...Parse<$Tail>] : 
+  [];
 
 /**
  * TESTS
